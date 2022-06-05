@@ -1,10 +1,7 @@
 <h1>Add a new item to your inventory</h1>
 
-<%= simple_form_for @item do |f| %>
-  <%= f.input :category, as: :select, collection: Item::CATEGORY %>
-  <div class="mb-3">
-    <label class="form-label" for="count">Count in kgs</label>
-    <input class="form-control" type="number" id="count" name="count" min="1" max="40">
+  <div class="card-body">
+    <%= render "form", item: @item %>
   </div>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+
+<%= link_to  "Home", root_path, class: "btn btn-secondary mt-3"  %>

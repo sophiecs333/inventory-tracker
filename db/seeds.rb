@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+8.times do
+  i = Item.new
+  i.category = Item::CATEGORY
+  i.quantity = rand(1..10)
+  i.save
+  p i.errors.full_messages
+end

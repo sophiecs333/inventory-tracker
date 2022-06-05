@@ -1,1 +1,27 @@
 <h1>See here a list of all inventory items</h1>
+
+<table>
+
+</table>
+
+
+<table>
+  <thead>
+      <th>Id number</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Current location</th>
+      <th colspan="4"></th>
+  </thead>
+  <br>
+  <tbody>
+    <% @items.each do |item| %>
+        <td><%= item.id %></td>
+        <td><%= item.category %></td>
+        <td><%= item.quantity %></td>
+        <td> <p>current location</p> </td>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to  "Home", root_path, class: "btn btn-secondary mt-3"  %>
