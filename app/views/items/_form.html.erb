@@ -4,6 +4,6 @@
     <label class="form-label" for="count">Count in kgs</label>
     <input class="form-control" type="number" id="count" name="count" min="1" max="40">
   </div>
-  <%= f.input :category, as: :select, collection: Warehouse.location %>
+  <%= f.input :warehouse, as: :select, collection: Warehouse.location %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
