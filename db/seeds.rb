@@ -7,9 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+4.times do
+  w = Warehouse.new
+  w.location = ["Munich", "London", "Berlin", "Amsterdam"].sample
+  w.save
+  p w.errors.full_messages
+end
+
+
+
 8.times do
   i = Item.new
-  i.category = Item::CATEGORY
+  i.warehouse = Warehouse.location.sample
+  i.category = Item::CATEGORY.sample
   i.quantity = rand(1..10)
   i.save
   p i.errors.full_messages

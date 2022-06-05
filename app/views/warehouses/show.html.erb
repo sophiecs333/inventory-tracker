@@ -1,0 +1,17 @@
+<h1>Warehouse</h1>
+
+<br>
+<p> Id number: <%= @warehouse.id %></p>
+<p> Location: <%= @warehouse.location %></p>
+<p> Items in stock: <%= @item.quantity %></p>
+
+
+  <h2>Items in stock</h2>
+  <% @warehouse.items.each do |item| %>
+    <p><%= item.category %></p>
+    <p><%= item.quantity %></p>
+  <% end %>
+  <%# <%= link_to "Add new item", new_shipmentUPDATETHIS_pallet_path(@warehouse), class: "btn btn-primary mb-3" %>
+
+
+<%= link_to  "Back to items index", warehouse_items_path, class: "btn btn-secondary mt-3"  %>

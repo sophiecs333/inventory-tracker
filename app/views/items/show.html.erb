@@ -1,0 +1,7 @@
+<h1>Item details <h1>
+<br>
+<p> Id number: <%= @item.id %></p>
+<p> Category: <%= @item.category %></p>
+<p> Current quantity: <%= @item.quantity %></p>
+<p> Warehouse: <%= @item.warehouse.location %></p>
+<%= link_to  "Back to index", items_path, class: "btn btn-secondary mt-3"  %>

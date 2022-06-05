@@ -1,25 +1,32 @@
 <h1>See here a list of all inventory items</h1>
 
-<table>
-
-</table>
-
 
 <table>
   <thead>
+    <tr>
       <th>Id number</th>
       <th>Category</th>
       <th>Quantity</th>
       <th>Current location</th>
-      <th colspan="4"></th>
+      <th colspan="7"></th>
+    </tr>
   </thead>
   <br>
   <tbody>
     <% @items.each do |item| %>
+      <tr>
         <td><%= item.id %></td>
         <td><%= item.category %></td>
         <td><%= item.quantity %></td>
-        <td> <p>current location</p> </td>
+        <td><%= item.warehouse.location %></td>
+        <td> <%= link_to "View",
+            item_path(item) %> </td>
+        <td> <%= link_to "Edit",
+            edit_item_path(item) %> </td>
+        <td> <%= link_to "Delete",
+            delete_item_path(item),
+            data: { confirm: "Are you sure?" } %> </td>
+      <tr>
     <% end %>
   </tbody>
 </table>

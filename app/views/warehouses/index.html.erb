@@ -1,0 +1,23 @@
+<h1>All Warehouses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id number</th>
+      <th>Location</th>
+      <th colspan="7"></th>
+    </tr>
+  </thead>
+  <br>
+  <tbody>
+    <% @warehouses.each do |warehouse| %>
+      <tr>
+        <td><%= warehouse.id %></td>
+        <td><%= warehouse.location %></td>
+        <td> <%= link_to "View", warehouse_path(warehouse) %> </td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to  "Home", root_path, class: "btn btn-secondary mt-3"  %>
