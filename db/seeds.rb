@@ -6,17 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "--- clearing database ---"
+Warehouse.destroy_all
+Item.destroy_all
 
-4.times do
-  w = Warehouse.new
-  w.location = ["Munich", "London", "Berlin", "Amsterdam"].sample
-  w.save
-  p w.errors.full_messages
-end
+puts "--- creating warehouses ---"
+Warehouse.create(location: "Munich")
+Warehouse.create(location: "London")
+Warehouse.create(location: "Berlin")
+Warehouse.create(location: "Amsterdam")
 
 
-
-8.times do
+puts "--- creating items ---"
+20.times do
   i = Item.new
   i.warehouse = Warehouse.location.sample
   i.category = Item::CATEGORY.sample
