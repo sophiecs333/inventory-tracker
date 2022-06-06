@@ -16,9 +16,9 @@ class WarehousesController < ApplicationController
   def create
     @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
-      redirect_to warehouse_path(@warehouse), notice: 'Your new warehouse was successfully created.'
+      redirect_to warehouse_path(@warehouse)
     else
-      render :new, notice: 'Error, your warehouse was not saved, try again.'
+      render :new
     end
   end
 

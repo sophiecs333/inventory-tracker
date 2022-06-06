@@ -18,10 +18,8 @@ class ItemsController < ApplicationController
     @item.warehouse = Warehouse.find(params[:item][:warehouse_id])
     if @item.save
       redirect_to items_path
-      # :message = 'Your new item was successfully created.'
     else
       render :new
-      # :message = 'Error, your item was not saved, try again.'
     end
   end
 
@@ -32,9 +30,9 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     if @item.save
-      redirect_to items_path, notice: 'Your item was successfully updated.'
+      redirect_to items_path
     else
-      render :edit, notice: 'Error, your item was not properly edited, try again.'
+      render :edit
     end
   end
 

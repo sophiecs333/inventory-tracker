@@ -6,10 +6,10 @@
 
   <h2>Items in stock</h2>
   <% @warehouse.items.each do |item| %>
-    <p>Id# <%= item.id %></p>
+    <p>Id number <%= item.id %></p>
     <p>Category: <%= item.category %></p>
   <% end %>
-  <%# <%= link_to "Add new item", new_shipmentUPDATETHIS_pallet_path(@warehouse), class: "btn btn-primary mb-3" %>
 
-
+<%= link_to  "Back to warehouses index", warehouses_path, class: "btn btn-secondary mt-3"  %>
 <%= link_to  "Back to items index", items_path, class: "btn btn-secondary mt-3"  %>
+<%= link_to  "Home", root_path, class: "btn btn-secondary mt-3"  %>
