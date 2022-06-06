@@ -1,9 +1,5 @@
 <%= simple_form_for @item do |f| %>
-  <%= f.input :category, as: :select, collection: Item::CATEGORY %>
-  <div class="mb-3">
-    <label class="form-label" for="count">Count in kgs</label>
-    <input class="form-control" type="number" id="count" name="count" min="1" max="40">
-  </div>
-  <%= f.input :warehouse, as: :select, collection: Warehouse.location %>
+  <%= f.input :category %>
+  <%= f.input :warehouse %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

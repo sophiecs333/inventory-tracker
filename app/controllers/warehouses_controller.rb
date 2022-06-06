@@ -1,8 +1,12 @@
 class WarehousesController < ApplicationController
-  before_action :set_warehouse, only: [:create ]
+  before_action :set_warehouse, only: [:show ]
 
   def index
     @warehouses = Warehouse.all
+  end
+
+  def show
+
   end
 
   def new

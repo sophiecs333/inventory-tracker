@@ -15,9 +15,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.warehouse = @warehouse
+    @item.warehouse = Warehouse.find(params[:warehouse_id])
+    # @item.warehouse = @warehouse
     if @item.save
-      redirect_to warehouse_items_path, notice: 'Your new item was successfully created.'
+      redirect_to items_path, notice: 'Your new item was successfully created.'
     else
       render :new, notice: 'Error, your item was not saved, try again.'
     end
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     if @item.save
-      redirect_to warehouse_items_path, notice: 'Your item was successfully updated.'
+      redirect_to items_path, notice: 'Your item was successfully updated.'
     else
       render :edit, notice: 'Error, your item was not properly edited, try again.'
     end
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to warehouse_items_path
+    redirect_to items_path
   end
 
   private
@@ -48,6 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:category, :quantity)
+    params.require(:item).permit(:category)
   end
 end

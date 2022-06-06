@@ -6,7 +6,6 @@
     <tr>
       <th>Id number</th>
       <th>Category</th>
-      <th>Quantity</th>
       <th>Current location</th>
       <th colspan="7"></th>
     </tr>
@@ -17,14 +16,14 @@
       <tr>
         <td><%= item.id %></td>
         <td><%= item.category %></td>
-        <td><%= item.quantity %></td>
         <td><%= item.warehouse.location %></td>
         <td> <%= link_to "View",
             item_path(item) %> </td>
         <td> <%= link_to "Edit",
             edit_item_path(item) %> </td>
         <td> <%= link_to "Delete",
-            delete_item_path(item),
+            item_path(item),
+            method: :delete,
             data: { confirm: "Are you sure?" } %> </td>
       <tr>
     <% end %>
