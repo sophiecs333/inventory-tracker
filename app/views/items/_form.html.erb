@@ -1,5 +1,5 @@
 <%= simple_form_for @item do |f| %>
-  <%= f.input :category %>
-  <%= f.input :warehouse %>
+  <%= f.input :category, collection: ["Car", "Truck", "Van", "Motorbike"] %>
+  <%= f.association :warehouse, label_method: :location %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

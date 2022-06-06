@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.warehouse = Warehouse.find(params[:warehouse_id])
+    @item.warehouse = Warehouse.find(params[:item][:warehouse_id])
     # @item.warehouse = @warehouse
     if @item.save
       redirect_to items_path, notice: 'Your new item was successfully created.'
@@ -49,6 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:category)
+    params.require(:item).permit(:category, :warehouse_id)
   end
 end
