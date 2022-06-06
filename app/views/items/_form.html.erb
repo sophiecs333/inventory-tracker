@@ -2,4 +2,5 @@
   <%= f.input :category, collection: ["Car", "Truck", "Van", "Motorbike"] %>
   <%= f.association :warehouse, label_method: :location %>
   <%= f.button :submit, class: "btn btn-primary" %>
+  <%# <%= render "flash" %>
 <% end %>
