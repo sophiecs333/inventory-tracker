@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2022_06_05_160336) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "quantity"
     t.index ["warehouse_id"], name: "index_items_on_warehouse_id"
   end
 

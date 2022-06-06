@@ -19,11 +19,10 @@ Warehouse.create(location: "Amsterdam")
 
 
 puts "--- creating items ---"
-20.times do
+6.times do
   i = Item.new
   i.warehouse = Warehouse.all.sample
   i.category = ["Car", "Truck", "Van", "Motorbike"].sample
-  i.quantity = rand(1..10)
   i.save
   # p i.errors.full_messages
 end

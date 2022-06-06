@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # @item.warehouse = Warehouse.find(params[:item][:warehouse_id])
     @item.warehouse = Warehouse.find(params[:item][:warehouse_id])
     if @item.save
       redirect_to items_path
